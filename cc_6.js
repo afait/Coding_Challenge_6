@@ -58,3 +58,12 @@ function convertCurrency(amount, exchangeRate) {
 // creates a function that converts currency based on the amount and the exchange rate
 console.log("Converted Amount: $", (convertCurrency(100, 1.1).toFixed(2))); // converts 100 dollars at a rate of 1.1 rounding to two decimal places
 console.log("Converted Amount: $", (convertCurrency(250, 0.85).toFixed(2)));// converts 250 dollars at a rate of 0.85 rounding to two decimal places
+
+// Task 6 - Higher-Order Function for Bulk Orders
+let orders = [200, 1000, 600, 0, 100]; // Created five order amounts
+function applyBulkDiscount(orders, discountFunction) {
+    let discountedOrders = orders.map(discountFunction);
+    return discountedOrders;
+}; // created a function that applys a discount amount to the orders and returns the discounted amount
+let BulkDiscountOrders = applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount); // Takes 10% off orders of $500 or more
+console.log("Discounted Orders", BulkDiscountOrders); // Logs the discounted order prices
