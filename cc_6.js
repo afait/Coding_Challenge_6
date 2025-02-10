@@ -36,16 +36,25 @@ function calculateSubscriptionCost(plan, months, discount = 0) {
     let Basic = 10;
     let Premium = 20;
     let Enterprise = 50;
-
+// Create function that calculates the subscripton cost based on the plan, the number of months and subtracts a discount
     if (plan === "Basic") {
         return (months * Basic) - discount;
-    };
+    }; // calculation for basic plan
     if (plan === "Premium") {
         return (months * Premium) - discount;
-    };
+    }; // calculation for premium plan
     if (plan === "Enterprise") {
         return (months * Enterprise) - discount;
-    }
+    } // calculation for enterprise plan
 }
-console.log("Total Cost: $", calculateSubscriptionCost("Basic", 6, 10));
-console.log("Total Cost: $", calculateSubscriptionCost("Premium", 12, 0));
+console.log("Total Cost: $", calculateSubscriptionCost("Basic", 6, 10)); // log the subscripton cost of a basic six month plan with a $10 discount
+console.log("Total Cost: $", calculateSubscriptionCost("Premium", 12, 0));// log the subscripton cost of a premium twelve month plan with no discount
+
+// Task 5 - Currency Conversion
+
+function convertCurrency(amount, exchangeRate) {
+    return (amount * exchangeRate)
+};
+// creates a function that converts currency based on the amount and the exchange rate
+console.log("Converted Amount: $", (convertCurrency(100, 1.1).toFixed(2))); // converts 100 dollars at a rate of 1.1 rounding to two decimal places
+console.log("Converted Amount: $", (convertCurrency(250, 0.85).toFixed(2)));// converts 250 dollars at a rate of 0.85 rounding to two decimal places
