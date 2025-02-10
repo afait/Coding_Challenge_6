@@ -29,3 +29,4 @@ const calculateBonus = (salary, performanceRating) => { // create function that 
 };
 console.log("Bonus: $", calculateBonus(5000, "Excellent")); // logging the bonus for an excellent performance rating
 console.log("Bonus: $", calculateBonus(7000, "Good")); // loggin the bonus for a good performance rating
+
