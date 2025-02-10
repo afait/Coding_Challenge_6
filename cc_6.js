@@ -60,6 +60,7 @@ console.log("Converted Amount: $", (convertCurrency(100, 1.1).toFixed(2))); // c
 console.log("Converted Amount: $", (convertCurrency(250, 0.85).toFixed(2)));// converts 250 dollars at a rate of 0.85 rounding to two decimal places
 
 // Task 6 - Higher-Order Function for Bulk Orders
+
 let orders = [200, 1000, 600, 0, 100]; // Created five order amounts
 function applyBulkDiscount(orders, discountFunction) {
     let discountedOrders = orders.map(discountFunction);
@@ -67,3 +68,15 @@ function applyBulkDiscount(orders, discountFunction) {
 }; // created a function that applys a discount amount to the orders and returns the discounted amount
 let BulkDiscountOrders = applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount); // Takes 10% off orders of $500 or more
 console.log("Discounted Orders", BulkDiscountOrders); // Logs the discounted order prices
+
+// Task 7 - Business Expense Tracker
+function createExpenseTracker() { // create a function under the name CreateExpenseTracker
+    let expenses = 0 // start with expenses of 0
+    return function(expense){
+        expenses += expense;
+        return expenses
+    }
+} // function takes the current expenses and adds it to the previous to create a total
+let tracker = createExpenseTracker();
+console.log("Total Expenses: $", tracker(200)); // logs expenses of 200
+console.log("Total Expenses: $", tracker(150)); // logs the total expenses so 200 + the new 150
